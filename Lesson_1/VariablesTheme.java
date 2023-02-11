@@ -52,26 +52,26 @@ public class VariablesTheme {
                 "значение num4 после декремента = " + num4-- + "\n\n");
 
         System.out.println("5. Перестановка значений переменных\n");
-        int e = 2;
-        int f = 5;
-        int g =f;
+        int num6 = 2;
+        int num7 = 5;
+        int temp =num7;
         System.out.println("с помощью третьей переменной:\n" + 
-                "исходные значения переменных. e = " + e + ", f = " + f);
-        f = e;
-        e = g;
-        System.out.println("новые значения переменных. e = " + e + ", f = " + f +"\n\n" + 
+                "исходные значения переменных. num6 = " + num6 + ", num7 = " + num7);
+        num7 = num6;
+        num6 = temp;
+        System.out.println("новые значения переменных. num6 = " + num6 + ", num7 = " + num7 +"\n\n" + 
                 "c помощью арифметических операций:\n" + 
-                "исходные значения переменных. e = " + e + ", f = " + f);
-        e += f;
-        f = e - f;
-        e -= f;
-        System.out.println("новые значения переменных. e = " + e + ", f = " + f +"\n\n" + 
+                "исходные значения переменных. num6 = " + num6 + ", num7 = " + num7);
+        num6 += num7;
+        num7 = num6 - num7;
+        num6 -= num7;
+        System.out.println("новые значения переменных. num6 = " + num6 + ", num7 = " + num7 +"\n\n" + 
                 "с помощью побитной операции ^:\n" + 
-                "исходные значения переменных. e = " + e + ", f = " + f);
-        e ^= f;
-        f ^= e;
-        e ^= f;
-        System.out.println("новые значения переменных. e = " + e + ", f = " + f +"\n");
+                "исходные значения переменных. num6 = " + num6 + ", num7 = " + num7);
+        num6 ^= num7;
+        num7 ^= num6;
+        num6 ^= num7;
+        System.out.println("новые значения переменных. num6 = " + num6 + ", num7 = " + num7 +"\n");
 
         System.out.println("6. Вывод символов и их кодов");
         char hash = '#';
