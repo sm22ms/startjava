@@ -108,7 +108,7 @@ public class VariablesTheme {
                 units + " единиц\n" + "Сумма его цифр = " + sumDigits + "\nПроизведение = " + 
                 multDigits + "\n");
 
-        System.out.println("9. Вывод времени");
+        System.out.println("9. Вывод времени.");
         int seconds = 86399;
         int hh = seconds / 3600 % 24;
         int mm = seconds % 3600 / 60;
