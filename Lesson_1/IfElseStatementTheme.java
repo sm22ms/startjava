@@ -39,7 +39,7 @@ public class IfElseStatementTheme {
         } else if(num1 < num2) {
             System.out.println("max число, " + num2 + " min число " + num1);
         } else {
-            System.out.println(num1 + " " + num2 + " равны, max и min значение не найти");
+            System.out.println(num1 + " " + num2 + " равны, max и min значения не найти");
         }
 
         System.out.println("\n3. Проверка числа\n");
@@ -108,7 +108,7 @@ public class IfElseStatementTheme {
         } 
         
         System.out.println("Сумма Вклада = " + bankDeposit + "\nначисленный % = " + 
-                bankDeposit * percentRate / 100 + "\nИтогвая сумма с % = " + 
+                bankDeposit * percentRate / 100 + "\nИтоговая сумма с % = " + 
                 bankDeposit * (percentRate + 100) / 100);
 
         System.out.println("\n7. Определение оценки по предметам\n");
