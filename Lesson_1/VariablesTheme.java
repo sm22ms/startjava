@@ -100,12 +100,12 @@ public class VariablesTheme {
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
         int num3 = 123;
         int hundreds = num3 / 100;
-        int dozens = num3 / 10 % 10;
-        int units = num3 % 10;
-        int sumDigits = hundreds + dozens + units;
-        int multDigits = hundreds * dozens * units;
-        System.out.println("Число N содержит:\n" + hundreds + " сотен\n" + dozens + " десятков\n" + 
-                units + " единиц\n" + "Сумма его цифр = " + sumDigits + "\nПроизведение = " + 
+        int tens = num3 / 10 % 10;
+        int ones = num3 % 10;
+        int sumDigits = hundreds + tens + ones;
+        int multDigits = hundreds * tens * ones;
+        System.out.println("Число N содержит:\n" + hundreds + " сотен\n" + tens + " десятков\n" + 
+                ones + " единиц\n" + "Сумма его цифр = " + sumDigits + "\nПроизведение = " + 
                 multDigits + "\n");
 
         System.out.println("9. Вывод времени.");
