@@ -88,11 +88,11 @@ public class IfElseStatementTheme {
         System.out.println("\n5. Определение символа по его коду\n");
         char someChar = '\u0071';
         System.out.println(someChar);
-        if(someChar >= 'a' & someChar <= 'z') {
+        if(someChar >= 'a' && someChar <= 'z') {
             System.out.println("маленькая буква"); 
-        } else if(someChar >= 'a' & someChar <= 'z') {
+        } else if(someChar >= 'a' && someChar <= 'z') {
             System.out.println("большая буква");
-        } else if(someChar >= '0' & someChar <= '9') {
+        } else if(someChar >= '0' && someChar <= '9') {
             System.out.println("число");
         } else {
             System.out.println("не буква и не число");
@@ -133,7 +133,7 @@ public class IfElseStatementTheme {
         }
  
         System.out.println(historyGrade + " за Историю и " + programmingGrade + 
-                " за Программирование\n" + (double)((historyGrade + programmingGrade) / 2) + 
+                " за Программирование\n" + (double) ((historyGrade + programmingGrade) / 2) + 
                 " средний бал оценок\n" + 
                 (historyPercent + programmingPercent) / 2 + 
                 " средний % по предметам");
@@ -150,49 +150,36 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n9. Подсчет количества банкнот\n");
-        int clientRequestMoney = 567;
-        int sum100UsdRequest = clientRequestMoney / 100 * 100;
-        int sum10UsdRequest = clientRequestMoney / 10 % 10 * 10;
-        int sum1UsdRequest = clientRequestMoney % 10;
         int atm100Usd = 10;
         int atm10Usd = 5;
         int atm1Usd = 50;
-        int sumAtm100Usd = atm100Usd * 100;
-        int sumAtm10Usd = atm10Usd * 10;
-        int sumAtmAllUsd = sumAtm100Usd + sumAtm10Usd + atm1Usd;
-        int sum1UsdCover10Usd = sum10UsdRequest + sum1UsdRequest;
-        int sum10UsdCover100Usd = sum10UsdRequest + sum100UsdRequest;
-        boolean isEnough100Usd = sum100UsdRequest <= sumAtm100Usd;
-        boolean isEnough10Usd = sum10UsdRequest <= sumAtm10Usd;
-        boolean isEnough1Usd = sum1UsdRequest <= atm1Usd;
-        boolean isEnough1UsdCoverAll = atm1Usd + sumAtm10Usd + sumAtm100Usd >= clientRequestMoney;
-        boolean isEnough1UsdCover10Usd = atm1Usd + sumAtm10Usd >= sum1UsdCover10Usd;
-        boolean isEnough10UsdCover100Usd = sumAtm10Usd + sumAtm100Usd >= sum10UsdCover100Usd; 
-        if(isEnough100Usd & isEnough10Usd & isEnough1Usd) {
-            System.out.println("Получите номиналом 100 USD " + sum100UsdRequest / 100 +
-                    "\nПолучи номиналом 10 USD " + sum10UsdRequest / 10 + 
-                    "\nПолучи номиналом 1 USD " + sum1UsdRequest +
-                    "\nВыдавая сумма " + clientRequestMoney + " USD");
-        } else if(isEnough100Usd & !isEnough10Usd & isEnough1UsdCover10Usd) {
-            System.out.println("Получите номиналом 100 USD " + sum100UsdRequest / 100 +
-                    "\nПолучи номиналом 10 USD " + sumAtm10Usd / 10 + 
-                    "\nПолучи номиналом 1 USD " + (int)(sum1UsdCover10Usd - sumAtm10Usd) +
-                    "\nВыдавая сумма " + clientRequestMoney + " USD"); 
-        } else if(!isEnough100Usd & isEnough10UsdCover100Usd & isEnough1Usd) {
-            System.out.println("Получите номиналом 100 USD " + sumAtm100Usd / 100 +
-                    "\nПолучи номиналом 10 USD " + 
-                            (int)(clientRequestMoney - sumAtm100Usd - sum1UsdRequest) + 
-                    "\nПолучи номиналом 1 USD " + sum1UsdRequest +
-                    "\nВыдавая сумма " + clientRequestMoney + " USD");
-        } else if(isEnough1UsdCoverAll & isEnough1Usd) {
-            System.out.println("Получите номиналом 100 USD " + sumAtm100Usd / 100 +
-                    "\nПолучи номиналом 10 USD " + sumAtm10Usd / 10 + 
-                    "\nПолучи номиналом 1 USD " + 
-                            (int)(clientRequestMoney - sumAtm10Usd - sumAtm100Usd) +
-                    "\nВыдавая сумма " + clientRequestMoney + " USD");
-        } else if(clientRequestMoney > sumAtmAllUsd | !isEnough1Usd) {
-            System.out.println("Мы не может выдать запрашиваемую сумму.\n" +
-                    "Попробуйте ввести другое количество.");
+        int requiredAmount = 567;
+
+        if(atm100Usd * 100 + atm10Usd * 10 + atm1Usd < requiredAmount) {
+            System.out.println("Недостаточно денег в банкомате");
+        } else {
+            //переменные если денег достаточно для вывода любой суммы
+            int withdrawal100Usd = requiredAmount / 100;
+            int withdrawal10Usd = requiredAmount / 10 % 10;
+            int withdrawal1Usd = requiredAmount % 10;
+
+            //если не хватает 100$, берем 10$
+            if(atm100Usd < withdrawal100Usd) {                
+                withdrawal10Usd += withdrawal100Usd * 10 - atm100Usd * 10;
+                withdrawal100Usd = atm100Usd;
+            }
+
+            //если еще и 10$ не хватает, то берем 1$
+            if (atm10Usd < withdrawal10Usd) {
+                withdrawal1Usd += withdrawal10Usd * 10 - atm10Usd * 10;
+                withdrawal10Usd = atm10Usd;
+            } 
+            //вывод результата
+            System.out.println("Номиналы банкнот:");
+            System.out.println("100$: " + withdrawal100Usd);
+            System.out.println("10$: " + withdrawal10Usd);
+            System.out.println("1$: " + withdrawal1Usd);
+            System.out.println("Выдаваемая сумма $: " + requiredAmount);
         }
     }
 }
