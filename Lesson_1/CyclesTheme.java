@@ -92,41 +92,41 @@ public class CyclesTheme {
 
         System.out.println("\n6.Отображение фигур в консоли\n");
         System.out.println("Квадрат\n");
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 9; j++) {
+        for (int i = 0; i <= 5; i++) {
+            for (int j = 0; j <= 10; j++) {
                 System.out.print('*');
             }
-            System.out.println('*');
+            System.out.println();
         }
 
         System.out.println("\nПрямоугольный треугольник\n");
-        int numOfRows1 = 5;
-        int numOfColumns1 = 0;
-        while(numOfColumns1 < numOfRows1) {
-            int counterSymbolPerLine1 = numOfRows1 - numOfColumns1;
-            while(counterSymbolPerLine1 > 0) {
+        int numOfRows = 5;
+        int numOfColumns = 0;
+        while(numOfColumns < numOfRows) {
+            int countSymbolPerLine1 = numOfRows - numOfColumns;
+            while(countSymbolPerLine1 > 0) {
                 System.out.print('#');
-                counterSymbolPerLine1--;
+                countSymbolPerLine1--;
             }
             System.out.println();
-            numOfColumns1++;
+            numOfColumns++;
         }
 
         System.out.println("\nТреугольник №2\n");
-        int numOfRows = 1;
-        int counterSymbolPerLine = 1;
+        numOfRows = 1;
+        int countSymbolPerLine = 1;
         do {
-            int numOfColumns = 1;
+            numOfColumns = 1;
             do {
                 System.out.print("$");
                 numOfColumns++;
-            } while (numOfColumns <= counterSymbolPerLine);
+            } while (numOfColumns <= countSymbolPerLine);
             System.out.println();
             numOfRows++;
             if (numOfRows <= 3) {
-                counterSymbolPerLine++;
+                countSymbolPerLine++;
             } else {
-                counterSymbolPerLine--;
+                countSymbolPerLine--;
             }
         } while (numOfRows <= 5);
 
@@ -145,7 +145,7 @@ public class CyclesTheme {
         System.out.println("\n8.Проверка, является ли число палиндромом\n");
         long num8 = 123456787654321L;
         long reversedNum8 = 0;
-        long cpoyNum8 = num8;
+        long copyNum8 = num8;
   
         // переворачиваем число
         while(num8 > 0) {
@@ -155,42 +155,39 @@ public class CyclesTheme {
         }
 
         // проверяем, является ли число палиндромом
-        if (cpoyNum8 == reversedNum8) {
-            System.out.println(cpoyNum8 + " является палиндромом");
+        if (copyNum8 == reversedNum8) {
+            System.out.println(copyNum8 + " является палиндромом");
         } else {
-            System.out.println(cpoyNum8 + " не является палиндромом");
+            System.out.println(copyNum8 + " не является палиндромом");
         }
 
         System.out.println("\n9. Определение, является ли число счастливым\n");
-        int num9 = 123456; // замените это число на любое другое шестизначное число
+        int num9 = 834456; // замените это число на любое другое шестизначное число
         int copyNum9 = num9;
-        int sumFirstHalf = 0;
-        int sumSecondHalf = 0;
+        int sumRightHalf = 0;
+        int sumLeftHalf = 0;
 
-        // вычисляем сумму первой половины num9
-        for (int i = 0; i < 3; i++) {
+        // вычисляем сумму правой половины num9
+        for (int i = 1; i < 7; i++) {
             int digit = num9 % 10;
-            sumFirstHalf += digit;
-            num9 /= 10;
-        }
-
-        // вычисляем сумму второй половины num9
-        for (int i = 0; i < 3; i++) {
-            int digit = num9 % 10;
-            sumSecondHalf += digit;
+            if(i <= 3) {
+                sumRightHalf += digit;
+            } else {
+                sumLeftHalf += digit;
+            }
             num9 /= 10;
         }
 
         // проверяем, является ли число счастливым
-        if (sumFirstHalf == sumSecondHalf) {
+        if (sumRightHalf == sumLeftHalf) {
             System.out.println("Число является счастливым!");
         } else {
             System.out.println("Число не является счастливым.");
         }
 
         // выводим суммы половин числа в консоль
-        System.out.println("Сумма цифр " + copyNum9 % 1000 + " = " + sumFirstHalf);
-        System.out.println("Сумма цифр " + copyNum9 / 1000 + " = " + sumSecondHalf);
+        System.out.println("Сумма цифр " + copyNum9 % 1000 + " = " + sumRightHalf);
+        System.out.println("Сумма цифр " + copyNum9 / 1000 + " = " + sumLeftHalf);
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         // Выводим заголовок таблицы c 2 до 9
@@ -198,8 +195,8 @@ public class CyclesTheme {
         for (int i = 2; i <= 9; i++) {
             System.out.print(i + "  ");
         }
-        System.out.println();
-        System.out.print("--|");
+        
+        System.out.print("\n--|");
         for (int i = 2; i <= 9; i++) {
             System.out.print("---");
         }
