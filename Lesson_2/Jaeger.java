@@ -1,13 +1,35 @@
 public class Jaeger {
+    private String modelName;
+    private double height;
+    private double weight;
+    private int speed;
+    private int strength;
+    private int armor;
+    private String weapon1;
+    private String weapon2;
 
-    private String modelName = "Bracer Phoenix";
-    private String mark = "Mark-5";
-    private String origin = "USA";
-    private float height = 70.7f;
-    private float weight = 2.1f;
-    private int speed = 3;
-    private int strength = 8;
-    private int armor = 9;
+    public Jaeger() {
+        this.modelName = null;
+        this.height = 0.0;
+        this.weight = 0.0;
+        this.speed = 0;
+        this.strength = 0;
+        this.armor = 0;
+        this.weapon1 = null;
+        this.weapon2 = null;
+    }
+
+    public Jaeger(String modelName, double height, double weight, int speed, int strength,
+            int armor, String weapon1, String weapon2) {
+        this.modelName = modelName;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
+        this.weapon1 = weapon1;
+        this.weapon2 = weapon2;
+    }
 
     public String getModelName() {
         return this.modelName;
@@ -17,35 +39,19 @@ public class Jaeger {
         this.modelName = modelName;
     }
 
-    public String getMark() {
-        return this.mark;
-    }
-
-    public void setMark(String mark) {
-        this.mark = mark;
-    }
-
-    public String getOrigin() {
-        return this.origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public float getHeight() {
+    public double getHeight() {
         return this.height;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public float getWeight() {
+    public double getWeight() {
         return this.weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
@@ -73,20 +79,19 @@ public class Jaeger {
         this.armor = armor;
     }
 
-    public boolean drift() {
-        System.out.println("Вы вошли в дрифт");
-        return true;
+    public String getWeapon1() {
+        return this.weapon1;
     }
 
-    public void move() {
-        System.out.println("Вы прошли пять шагов");
+    public void setWeapon1(String weapon) {
+        this.weapon1 = weapon;
     }
 
-    public String scanKaiju() {
-        return "scanning";
+    public String getWeapon2() {
+        return this.weapon2;
     }
 
-    public void useVortexCannon() {
-        System.out.println("activated");
+    public void setWeapon2(String weapon) {
+        this.weapon2 = weapon;
     }
 }
