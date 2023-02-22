@@ -1,9 +1,9 @@
 public class Calculator {
     public static void main(String[] args) {
-        long num1 = 1423L;
-        long num2 = 17;
+        double num1 = 1423L;
+        double num2 = 17;
         char sign = '^'; // здесь можно задать нужный знак операции
-        long result;
+        double result;
 
         if (sign == '+') {
             result = num1 + num2;
