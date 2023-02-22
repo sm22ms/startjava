@@ -2,3 +2,7 @@
 *.DS_Store
 *.iml
 *.json
+thumbs.db
+*.logs
+*~
+._*
