@@ -1,28 +1,38 @@
 public class Calculator {
+    private char sign;
 
-    public double calculate(double num1, double num2, char sign) {
-        double result;
+    public void setSign(char sign) {
+        if ("+-*/%^".indexOf(sign) >= 0) {
+            this.sign = sign;
+        } else {
+            System.out.println("Некорректный знак операции");
+        }
+    }
+
+    public double calculate(double num1, double num2) {
+        double result = 0;
+
         switch (sign) {
             case '+':
-                return num1 + num2;
+                result = num1 + num2;
             case '-':
                 result = num1 - num2;
-                break;
             case '*':
                 result = num1 * num2;
-                break;
             case '/':
-                result = num1 / num2;
-                break;
-            case '^':
-                result = Math.pow(num1, num2);
-                break;
+                if (num2 == 0) {
+                    System.out.println("Деление на ноль");
+                } else {
+                    result = num1 / num2;
+                }
             case '%':
                 result = num1 % num2;
-                break;
+            case '^':
+                result = Math.pow(num1, num2);
             default:
-                throw new IllegalArgumentException("Некорректный знак операции");
+                System.out.println("Некорректный знак операции");
         }
+
         return result;
     }
 }

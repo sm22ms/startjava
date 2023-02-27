@@ -1,53 +1,31 @@
 import java.util.Scanner;
 
 public class CalculatorTest {
-    public static void main(String[] args) {
-        calculate();
-    }
 
-    public static void calculate() {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
+
         String answer = "yes";
 
         while (answer.equals("yes")) {
-            double num1 = promptForDouble(scanner, "Введите первое число: ");
-            char sign = ' ';
+            double num1 = inputNumber(scanner, "Введите первое число: ");
+            char sign = inputSign(scanner, "Введите знак математической операции: ");
+            double num2 = inputNumber(scanner, "Введите второе число: ");
 
-            // Ввод знака операции
-            boolean validInput = false;
-            while (!validInput) {
-                System.out.print("Введите знак математической операции: ");
-                try {
-                    String input = scanner.next();
-                    sign = input.charAt(0);
-                    if ("+-*/%^".indexOf(sign) >= 0) {
-                        validInput = true;
-                    } else {
-                        System.out.println("Некорректный знак операции. Попробуйте еще раз.");
-                    }
-                } catch (Exception e) {
-                    System.out.println("Некорректный знак операции. Попробуйте еще раз.");
-                    scanner.nextLine();
-                }
-            }
-
-            double num2 = promptForDouble(scanner, "Введите второе число: ");
-
-            double result = calculator.calculate(num1, num2, sign);
+            calculator.setSign(sign);
+            double result = calculator.calculate(num1, num2);
             System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
 
-            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-            answer = scanner.next();
+            answer = typeMessage(scanner, "Хотите продолжить вычисления? [yes/no]: ");
             while (!answer.equals("yes") && !answer.equals("no")) {
-                System.out.print("Некорректный ответ. Хотите продолжить вычисления? [yes/no]: ");
-                answer = scanner.next();
+                answer = typeMessage(scanner, "Некорректный ответ. Хотите продолжить " +
+                        "вычисления? [yes/no]: ");
             }
         }
     }
 
-    // Метод для вывода первого и второго числа
-    public static double promptForDouble(Scanner scanner, String message) {
+    public static double inputNumber(Scanner scanner, String message) {
         double number = 0;
         boolean validInput = false;
 
@@ -63,5 +41,29 @@ public class CalculatorTest {
         }
 
         return number;
+    }
+
+    public static char inputSign(Scanner scanner, String message) {
+        char sign = ' ';
+        boolean validInput = false;
+
+        while (!validInput) {
+            System.out.print(message);
+            try {
+                String input = scanner.next();
+                sign = input.charAt(0);
+                validInput = true;
+            } catch (Exception e) {
+                System.out.println("Некорректный знак операции. Попробуйте еще раз.");
+                scanner.nextLine();
+            }
+        }
+
+        return sign;
+    }
+
+    public static String typeMessage(Scanner scanner, String message) {
+        System.out.print(message);
+        return scanner.next();
     }
 }
