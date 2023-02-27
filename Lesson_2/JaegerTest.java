@@ -13,36 +13,22 @@ public class JaegerTest {
         Jaeger crimsonTyphoon = new Jaeger("Gipsy Danger", 76.2, 1722.0, 9, 8, 6,
                 "Wrist-Mounted Saws", "Typhoon Burst Cannons");
 
-        System.out.printf("Model: %s\n" +
-                "Height: %.1fm\n" +
-                "Weight: %.1f tons\n" +
-                "Speed: %d\n" +
-                "Strength: %d\n" +
-                "Armor: %d\n" +
-                "Weapons: %s, %s\n",
-                chernoAlpha.getModelName(),
-                chernoAlpha.getHeight(),
-                chernoAlpha.getWeight(),
-                chernoAlpha.getSpeed(),
-                chernoAlpha.getStrength(),
-                chernoAlpha.getArmor(),
-                chernoAlpha.getWeapon1(),
-                chernoAlpha.getWeapon2());
+        System.out.println("Cherno Alpha:");
+        System.out.println("Model: " + chernoAlpha.getModelName());
+        System.out.println("Height: " + chernoAlpha.getHeight() + "m");
+        System.out.println("Weight: " + chernoAlpha.getWeight() + " tons");
+        System.out.println("Speed: " + chernoAlpha.getSpeed());
+        System.out.println("Strength: " + chernoAlpha.getStrength());
+        System.out.println("Armor: " + chernoAlpha.getArmor());
+        System.out.println("Weapons: " + chernoAlpha.getWeapon1() + ", " + chernoAlpha.getWeapon2());
 
-        System.out.printf("\nModel: %s\n" +
-                "Height: %.1fm\n" +
-                "Weight: %.1f tons\n" +
-                "Speed: %d\n" +
-                "Strength: %d\n" +
-                "Armor: %d\n" +
-                "Weapons: %s, %s\n",
-                crimsonTyphoon.getModelName(),
-                crimsonTyphoon.getHeight(),
-                crimsonTyphoon.getWeight(),
-                crimsonTyphoon.getSpeed(),
-                crimsonTyphoon.getStrength(),
-                crimsonTyphoon.getArmor(),
-                crimsonTyphoon.getWeapon1(),
-                crimsonTyphoon.getWeapon2());
+        System.out.println("\nCrimson Typhoon:");
+        System.out.println("Model: " + crimsonTyphoon.modelName);
+        System.out.println("Height: " + crimsonTyphoon.height + "m");
+        System.out.println("Weight: " + crimsonTyphoon.weight + " tons");
+        System.out.println("Speed: " + crimsonTyphoon.speed);
+        System.out.println("Strength: " + crimsonTyphoon.strength);
+        System.out.println("Armor: " + crimsonTyphoon.armor);
+        System.out.println("Weapons: " + crimsonTyphoon.weapon1 + ", " + crimsonTyphoon.weapon2);
     }
 }

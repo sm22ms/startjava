@@ -1,22 +1,14 @@
 public class Jaeger {
-    private String modelName;
-    private double height;
-    private double weight;
-    private int speed;
-    private int strength;
-    private int armor;
-    private String weapon1;
-    private String weapon2;
+    public String modelName;
+    public double height;
+    public double weight;
+    public int speed;
+    public int strength;
+    public int armor;
+    public String weapon1;
+    public String weapon2;
 
     public Jaeger() {
-        this.modelName = null;
-        this.height = 0.0;
-        this.weight = 0.0;
-        this.speed = 0;
-        this.strength = 0;
-        this.armor = 0;
-        this.weapon1 = null;
-        this.weapon2 = null;
     }
 
     public Jaeger(String modelName, double height, double weight, int speed, int strength,
@@ -32,7 +24,7 @@ public class Jaeger {
     }
 
     public String getModelName() {
-        return this.modelName;
+        return modelName;
     }
 
     public void setModelName(String modelName) {
@@ -40,7 +32,7 @@ public class Jaeger {
     }
 
     public double getHeight() {
-        return this.height;
+        return height;
     }
 
     public void setHeight(double height) {
@@ -48,7 +40,7 @@ public class Jaeger {
     }
 
     public double getWeight() {
-        return this.weight;
+        return weight;
     }
 
     public void setWeight(double weight) {
@@ -56,7 +48,7 @@ public class Jaeger {
     }
 
     public int getSpeed() {
-        return this.speed;
+        return speed;
     }
 
     public void setSpeed(int speed) {
@@ -64,7 +56,7 @@ public class Jaeger {
     }
 
     public int getStrength() {
-        return this.strength;
+        return strength;
     }
 
     public void setStrength(int strength) {
@@ -72,7 +64,7 @@ public class Jaeger {
     }
 
     public int getArmor() {
-        return this.armor;
+        return armor;
     }
 
     public void setArmor(int armor) {
@@ -80,7 +72,7 @@ public class Jaeger {
     }
 
     public String getWeapon1() {
-        return this.weapon1;
+        return weapon1;
     }
 
     public void setWeapon1(String weapon) {
@@ -88,7 +80,7 @@ public class Jaeger {
     }
 
     public String getWeapon2() {
-        return this.weapon2;
+        return weapon2;
     }
 
     public void setWeapon2(String weapon) {
